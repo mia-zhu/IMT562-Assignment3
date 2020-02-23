@@ -38,7 +38,9 @@
                     <div class="row">
                         <div class="col-md-12 column" style="padding-top: 10px;">
                             <p><span style="font-size: 28px;" class="title">
-                                    <h1>Weekly Geographical Spread of Canova Virus in China </h1>
+                                    <h1>Canovavirus Outbreak in China: 
+                                    <br/>
+                                Weekly Geographical Spread and Critical Statistics</h1>
                                 </span></p>
 
                             <span style="font-size: 14px;" class="expl">
@@ -61,7 +63,6 @@
                                     The reason why we decided to use these two chart types is that the <u>geographical info</u> showing how the disease is spread is the top important attribute to be encoded in this case.
                                     Apart from that, we also use <u>color</u> to encode the number of confirmed and death cases, to show the severe situation of virus and its impact on each area.
                                     We have once considered to use pyramids or normal ranked bar chart to show the case numbers for the right part of the data vis. However, we finally choose the radical one sincewe want to have a metaphor that all provinces actually connnect wit each other and are part of the destiny of China together. <br>
-                                    <br>
                                     
                                     <strong>Interactivity Techniques</strong><br>
                                        We mainly use <u>Hover</u> and <u>Button switch</u> as interactivity in our data vis, trying to eliminate any unnecessary visual distractions.
@@ -81,54 +82,40 @@
 
 
     <!-- KPI Board -->
-    <!--
     <div class="row" style="padding: 20px 0px 20px 100px;" text-center id="kpis">
         <div class="col-sm-4 column text-center">
             <div class="tile">
                 <div class="wrapper">
-                    <div class="header">Latest </div>
-                   
-
-                    <div class="stats">
-                        <div>
-                            <strong>Last Week</strong> 231
-                        </div>
-                        <div>
-                            <strong>Last Month</strong> 562
-                        </div>
-                        <div>
-                            <strong>Last 90 Days</strong> 1242
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-          
-           <div class="col-sm-3 column text-center">
-            <div class="tile">
-                <div class="wrapper">
-                    <div class="header">Avg Patients' Engagement %</div>
-                    <div class="dates">
+                    <div class="header">Confirmed Today</div>
+                      <div class="dates">
                         <div class="start">
-                            <strong>Today</strong> 72.4%
+                            <strong>Total Number</strong> 12345
                             <span></span>
                         </div>
                         <div class="ends">
-                            <strong>Yesterday</strong> 60.9%
+                            <strong>Growth Rate</strong> 30.9%
+                        </div>
+                      </div>                 
+
+                </div>
+            </div>
+        </div>
+    
+          
+           <div class="col-sm-4 column text-center">
+            <div class="tile">
+                <div class="wrapper">
+                    <div class="header">Deaths Today</div>
+                    <div class="dates">
+                        <div class="start">
+                            <strong>Total Number</strong> 12345
+                            <span></span>
+                        </div>
+                        <div class="ends">
+                            <strong>Growth Rate</strong> 30.9%
                         </div>
                     </div>
 
-                    <div class="stats">
-                        <div>
-                            <strong>Last Week</strong> 65.8%
-                        </div>
-                        <div>
-                            <strong>Last Month</strong> 60.6%
-                        </div>
-                        <div>
-                            <strong>Last 90 Days</strong> 47.1%
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -136,17 +123,14 @@
         <div class="col-sm-4 column text-center">
             <div class="tile">
                 <div class="wrapper">
-                    <div class="header">Test Tasks' User Completion %</div>
-
-                    <div class="stats">
-                        <div>
-                            <strong>Lowest(Last Month)</strong> MemoryActivity
+                    <div class="header">Recovered Today</div>
+                    <div class="dates">
+                        <div class="start">
+                            <strong>Total Number</strong> 12345
+                            <span></span>
                         </div>
-                        <div>
-                            <strong>2nd Lowest</strong> MedicationTracker
-                        </div>
-                        <div>
-                            <strong>3rd Lowest</strong> EnrollmentSurvey
+                        <div class="ends">
+                            <strong>Growth Rate</strong> 30.9%
                         </div>
                     </div>
                 </div>
@@ -155,35 +139,36 @@
     </div>
        
     <hr>
-     -->
+
 
     <!-- Main Vis -->
+    <div class="row" style="padding-top: 20px;">
+        <div class="col-sm-11 column col-sm-offset-1">
+            <h3>Coronavirus Outbreak Data Visualization</h3>
+        </div>
     <div class="row text-center" id="squarechart">
-        <!--
-           <div class="col-sm-8 column" text-left>
-            <div class="genderTitle">Daily Test Completion %(Select a specific test day)</div>
-        </div><br>
-        -->
 
         <div class="col-sm-12 row text-center" id="update">
             <div id="filter" }>
                 <div id="sex" class="buttons" style="align-items: center;">
-                    <h5>The Weeks After the Virus Broke </h5>
-                    <div class="button current" data-val="1">Week 1</div>
-                    <div class="button" data-val="2" style="margin-right:0">Week 2</div>
-                    <div class="button" data-val="2" style="margin-right:0">Week 3</div>
-                    <div class="button" data-val="2" style="margin-right:0">Week 4</div>
-                    <div class="button" data-val="2" style="margin-right:0">Week 5</div>
+                    <h5>Weeks After the Virus Broke </h5>
+                    <div class="button current" data-val="1">Full Period</div>
+                    <div class="button" data-val="2" style="margin-right:0">Week 1</div>
+                    <div class="button" data-val="3" style="margin-right:0">Week 2</div>
+                    <div class="button" data-val="4" style="margin-right:0">Week 3</div>
+                    <div class="button" data-val="5" style="margin-right:0">Week 4</div>
                 </div>
             </div>
             <div class="clr"></div>
-            <div class="col-sm-6" id="map_vis" style="background-color: aqua; height: 500px">
+            <div class="col-sm-6" id="map_vis" style="height: 500px">
             </div>
+                <script src=d3map.js></script>
             <div class="col-sm-6" id="map_vis" style="background-color: mediumpurple; height: 500px">
             </div>
 
         </div>
     </div>
+</div>
 
     <!-- <div class="clr"></div> -->
     <div class="col-sm-12" id="mainwrapper" height>

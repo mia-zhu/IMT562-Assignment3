@@ -1,0 +1,286 @@
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  fill: #4A4A4A;
+}
+
+.titles, h2, h3,h5 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+}
+
+.subheader{
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #949494;
+}
+
+.genderTitle {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 22px;
+	text-transform: uppercase;
+	margin: 0px 0px;
+	vertical-align: middle;
+	height: 34px;
+	line-height: 50px;
+}
+
+.insights, .expl {
+	line-height: 175%;
+}
+
+.attribution{
+	font-size: 13px;
+}
+
+.chartWrapper {
+	padding: 30px 0px;
+}
+
+
+/* card style*/
+.tile{
+	width: 100%;
+	background:#fff;
+	border-radius:3px;
+	box-shadow: 0px 0px 10px  rgba(151, 171, 187, 0.5);
+	float:left;
+  	transform-style: preserve-3d;
+  	margin: 10px 5px;
+
+}
+
+.header{
+	border-bottom:1px solid #ebeff2;
+	padding:19px 0;
+	text-align:center;
+	color:#59687f;
+	font-size:600;
+	font-size:19px;	
+	position:relative;
+}
+
+.banner-img {
+	padding: 5px 5px 0;
+}
+
+.banner-img img {
+	width: 100%;
+	border-radius: 5px;
+}
+
+.dates{
+	border:1px solid #ebeff2;
+	border-radius:5px;
+	padding:20px 0px;
+	margin:10px 20px;
+	font-size:16px;
+	color:#5aadef;
+	font-weight:600;	
+	overflow:auto;
+}
+.dates div{
+	float:left;
+	width:50%;
+	text-align:center;
+	position:relative;
+}
+
+.dates strong,
+.stats strong{
+	display:block;
+	color:#adb8c2;
+	font-size:13px;
+	font-weight:700;
+}
+.dates span{
+	width:1px;
+	height:40px;
+	position:absolute;
+	right:0;
+	top:0;	
+	background:#ebeff2;
+}
+.stats{
+	border-top:1px solid #ebeff2;
+	background:#f7f8fa;
+	overflow:auto;
+	padding:15px 0;
+	font-size:16px;
+	color:#59687f;
+	font-weight:600;
+	border-radius: 0 0 5px 5px;
+}
+.stats div{
+	border-right:1px solid #ebeff2;
+	width: 33.33333%;
+	float:left;
+	text-align:center
+}
+
+.stats div:nth-of-type(3){border:none;}
+
+
+/*line chart*/
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.browser text {
+  text-anchor: end;
+}
+
+.focus circle {
+  fill: darkgray;
+  stroke: white;
+}
+
+.focus line {
+    fill: none;
+    stroke: #675F5F;
+    stroke-width: 0.75px;
+    stroke-dasharray: 3 3;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+/* Controls
+============================ */
+
+#update {
+	margin: 20px 0px 0px 80px;
+}
+
+.buttons {
+    float: left;
+    margin-right: 40px;
+    margin-bottom: 20px;
+}
+.button {
+	width: 90px;
+	padding: 5px 5px;
+	margin-right: 2px;
+    margin-bottom: 2px;
+	cursor: pointer;
+	text-align: center;
+	font-size: 13px;
+	border: 1px solid #e0e0e0;
+	float: left;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+.button:hover {
+	background: #e0e0e0;
+}
+.button.current {
+	background: #000;
+	color: #fff;
+}
+
+
+/* #Reset & Basics (Inspired by E. Meyers)
+================================================== */
+#squarechart {
+    width: 1100px;
+    margin: 0 0 0 100px;
+}
+
+
+.clr { clear: both; }
+.centered { text-align: center; }
+.hidden  { 
+    display: none; 
+    pointer-events: none;
+}
+sup { 
+    vertical-align: text-top;
+    font-size: smaller;
+}
+
+/* Text
+============================ */
+
+h5 {
+	font-size: 13px;
+	padding: 3px 0px 0px 0px;
+	font-style: normal;
+    line-height: 1.3em;
+}
+/*h3 {
+	font-size: .9em;
+	padding: 3px 0px 5px 0;
+	font-style: normal;
+    line-height: 1.3em;
+}
+p {
+    margin-bottom: .5em;
+}
+*/
+.desc {
+    font-style: italic;
+	font-size: 1em;
+	line-height: 1.4em;
+}
+
+/* Square Pie Chart
+============================ */
+
+#totalcnt {
+    margin: 20px 0 30px 0;
+}
+#totalcnt #n {
+    font-size: 3.0em;
+}
+#charts {
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.chartholder { 
+/*    margin: 0 0 20px 0;*/
+    float: left;
+}
+.chartholder h3 {
+    height: 2.2em;
+    width: 95%;
+    display: block;
+}
+#main-wrapper {
+    width: 900px;
+    margin: 20px auto;
+}
+    
+/* Slider
+============================ */
+#slider svg line.track {
+    stroke-opacity: 100;
+    stroke: lightgray;
+    stroke-width: 15px;
+}
+#slider svg line.track-inset {
+    stroke: lightgray;
+    stroke-width: 12px;
+}
+#slider svg line.track-overlay {
+    stroke: #ccc;
+    stroke-width: 40px;
+    stroke-opacity: 00;
+    cursor: crosshair;
+}
+#slider svg .handle {
+    fill: steelblue;
+    stroke: white;
+}
+#slider svg line.track-overlay, #slider svg line.track, #slider svg line.track-inset {
+    stroke-linecap: round;
+}

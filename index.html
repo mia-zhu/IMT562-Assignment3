@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!-- D3 -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src='https://npmcdn.com/babel-core@5.8.34/browser.min.js'></script>
+
+    <!-- jQuery -->
+    <script src="jquery.min.js"></script>
+
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="bootstrap.min.js"></script>
+
+    <!-- Style -->
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <link href="style2.css" type="text/css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="chartWrapper">
+        <div id="cont" class="container-fluid">
+
+            <!-- Introduction -->
+            <div class="row" style="padding: 5px 0px;">
+                <div class="col-sm-2 column" style="padding: 30px 50px;">
+                    <a class="logo"><img src="china2.png"><br></a>
+                    <!-- <span class="subheader">We are all here supporting you!</span>-->
+                </div>
+
+                <div class="col-sm-9 column">
+                    <div class="row">
+                        <div class="col-md-12 column" style="padding-top: 10px;">
+                            <p><span style="font-size: 28px;" class="title">
+                                    <h1>Weekly Geographical Spread of Canova Virus in China </h1>
+                                </span></p>
+
+                            <span style="font-size: 14px;" class="expl">
+                                    <strong>Team Members</strong>: Xumin Zhu,Jiamin Li,Jiawei Xia, Xiaohua Shi <br>
+                                    <strong>Data update: </strong>2/21/2020<br>
+                                    <strong>Data Souce: </strong><a href="https://github.com/CSSEGISandData/COVID-19.git">https://github.com/CSSEGISandData/COVID-19.git</a><br>
+                                </span>
+                                <br>
+
+                            
+                                   <span style="font-size: 14px;" class="expl">
+                                    We are designing two correlated graph to visualize the breakthrough and spread of the conara virus throughout all provinces in China by week.<br>
+
+                                    We've chosen two vis to analyze our data - <br>
+                                    <ol style="font-size: 14px;">
+                                        <li>A map-based  heapmap to show how the disease spread geographically in China with time.</li>
+                                        <li>A radical stack bar chart to overview how the exact number of confirmed and death cases are in all provinces.</li>
+                                    </ol> 
+                                    <strong>Encoding Menthods</strong><br>
+                                    The reason why we decided to use these two chart types is that the <u>geographical info</u> showing how the disease is spread is the top important attribute to be encoded in this case.
+                                    Apart from that, we also use <u>color</u> to encode the number of confirmed and death cases, to show the severe situation of virus and its impact on each area.
+                                    We have once considered to use pyramids or normal ranked bar chart to show the case numbers for the right part of the data vis. However, we finally choose the radical one sincewe want to have a metaphor that all provinces actually connnect wit each other and are part of the destiny of China together. <br>
+                                    <br>
+                                    
+                                    <strong>Interactivity Techniques</strong><br>
+                                       We mainly use <u>Hover</u> and <u>Button switch</u> as interactivity in our data vis, trying to eliminate any unnecessary visual distractions.
+                                    
+        
+                                    <br>
+
+                                </span>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+
+    <!-- KPI Board -->
+    <!--
+    <div class="row" style="padding: 20px 0px 20px 100px;" text-center id="kpis">
+        <div class="col-sm-4 column text-center">
+            <div class="tile">
+                <div class="wrapper">
+                    <div class="header">Latest </div>
+                   
+
+                    <div class="stats">
+                        <div>
+                            <strong>Last Week</strong> 231
+                        </div>
+                        <div>
+                            <strong>Last Month</strong> 562
+                        </div>
+                        <div>
+                            <strong>Last 90 Days</strong> 1242
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+          
+           <div class="col-sm-3 column text-center">
+            <div class="tile">
+                <div class="wrapper">
+                    <div class="header">Avg Patients' Engagement %</div>
+                    <div class="dates">
+                        <div class="start">
+                            <strong>Today</strong> 72.4%
+                            <span></span>
+                        </div>
+                        <div class="ends">
+                            <strong>Yesterday</strong> 60.9%
+                        </div>
+                    </div>
+
+                    <div class="stats">
+                        <div>
+                            <strong>Last Week</strong> 65.8%
+                        </div>
+                        <div>
+                            <strong>Last Month</strong> 60.6%
+                        </div>
+                        <div>
+                            <strong>Last 90 Days</strong> 47.1%
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 column text-center">
+            <div class="tile">
+                <div class="wrapper">
+                    <div class="header">Test Tasks' User Completion %</div>
+
+                    <div class="stats">
+                        <div>
+                            <strong>Lowest(Last Month)</strong> MemoryActivity
+                        </div>
+                        <div>
+                            <strong>2nd Lowest</strong> MedicationTracker
+                        </div>
+                        <div>
+                            <strong>3rd Lowest</strong> EnrollmentSurvey
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+       
+    <hr>
+     -->
+
+    <!-- Main Vis -->
+    <div class="row text-center" id="squarechart">
+        <!--
+           <div class="col-sm-8 column" text-left>
+            <div class="genderTitle">Daily Test Completion %(Select a specific test day)</div>
+        </div><br>
+        -->
+
+        <div class="col-sm-12 row text-center" id="update">
+            <div id="filter" }>
+                <div id="sex" class="buttons" style="align-items: center;">
+                    <h5>The Weeks After the Virus Broke </h5>
+                    <div class="button current" data-val="1">Week 1</div>
+                    <div class="button" data-val="2" style="margin-right:0">Week 2</div>
+                    <div class="button" data-val="2" style="margin-right:0">Week 3</div>
+                    <div class="button" data-val="2" style="margin-right:0">Week 4</div>
+                    <div class="button" data-val="2" style="margin-right:0">Week 5</div>
+                </div>
+            </div>
+            <div class="clr"></div>
+            <div class="col-sm-6" id="map_vis" style="background-color: aqua; height: 500px">
+            </div>
+            <div class="col-sm-6" id="map_vis" style="background-color: mediumpurple; height: 500px">
+            </div>
+
+        </div>
+    </div>
+
+    <!-- <div class="clr"></div> -->
+    <div class="col-sm-12" id="mainwrapper" height>
+
+        <div class="clr"></div>
+        <div class="genericholder">
+            <div id="charts"></div>
+            <script id="grid" type="text/plain">
+            </script>
+        </div>
+
+
+    </div>
+    <hr>
+
+    <!-- Develop process -->
+    <div class="row" style="padding-top: 20px;">
+        <div class="col-sm-11 column col-sm-offset-1">
+            <h3>Our Development Process and Discovered Insights</h3>
+        </div>
+        <div class="col-sm-5 column col-sm-offset-1">
+            <p> <span style="font-size: 14px;" class="insights">
+                   <p style="font-size: 14px"><strong>Develop Process</strong> </p>
+                   <p style="font-size: 13px;">We geenrally started from choosing a data anlaysis and vis topic, finging suitable datasets, designing the vis, confirming details to cleaning and wrangling data and coding out the design. There are more specific detailed develop process from design to develop</p> <br>
+                   <ul style="font-size: 14px;">
+                       <li>We firstly agreed on the most important thing (story) to show through our vis - how the disease has spread and how it has impacted on each area out of our empathy.</li>
+                       <li> Then playing with the dataset, we decided the encoding channels: <u>Color</u> to show the impact by representing the scale of case numbers; <u>Geographical location</u> to show its spread route.</li>
+                       <li>While there are some methods of map vis to show piecharts or barcharts on it, we decided to make our design simple, clear and self-expressive without requiring much user thinking. Thus, we decied to use two seperate but complementary charts visualizing the geographical spread and numbercal increase of the disease. </li>
+                       <li>We've spent a long time translating design into code, espceially the button switch part that listens to the hover interaction and update the whole vis. Thus, we stuck here for a while.</li>   
+                       
+                   </ul>
+
+
+                </span>
+            </p>
+
+        </div>
+        <div class="col-sm-5 column">
+
+            <p><span style="font-size: 14px;" class="insights">
+                   <p style="font-size: 14px"><strong>Team Work Assignment</strong> </p>
+                   <p style="font-size: 13px;">We splited our work by every part of the vis.</p> <br>
+                   <ul style="font-size: 14px;">
+                       <li><strong>Vis Proposal:</strong> All Teammates</li>
+                       <li><strong>Data Prep:</strong> Jiawei Xia, Xiaohua Shi</li>
+                       <li><strong>Map Vis:</strong> Jiamin Li</li>
+                       <li><strong>Web Dev / Radical Bar:</strong> Xumin Zhu</li>
+                       <li><strong>Button Control</strong> Jiawei Xia</li>
+                   </ul>
+                   <p style="font-size: 14px"><strong>Some Data Insights</strong> </p>
+                   <p style="font-size: 13px;">sssssss</p> <br>
+                   <ul style="font-size: 14px;">
+                       <li>sssssssss</li>
+                       <li>ssssss</li>
+                       <li>sssssssss</li>
+                       <li>ssssss</li>
+
+                   </ul>
+
+
+                </span>
+            </p>
+        </div>
+    </div>
+
+</body>
+
+<footer style="padding: 20px 0px;">
+    <hr>
+    <div class="row">
+        <div class="col-md-12 column text-center">
+            <span class="attribution">Created by Xumin Zhu,Jiamin Li,Jiawei Xia, Xiaohua Shi | For Our Loved Mother China </span>
+        </div>
+    </div>
+</footer>
+
+</html>
